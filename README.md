@@ -6,4 +6,4 @@ You can also change the status for these books. Only books that belong to a shel
 
 ## TLDR
 
-Run npm install, then npm start to run this project
+Run npm install, then npm start to run this project at the project root level (ie /reactnd-project-myreads-starter if cloned directly)
