@@ -4,9 +4,9 @@ import {Link} from 'react-router-dom'
 
 class Bookshelves extends Component{
 
-    state = {
-        shelfTitles: ["Currently Reading","Want to Read","Read"],
-        shelfValues: ["currentlyReading","wantToRead","read"]
+    shelves = {
+        titles: ["Currently Reading","Want to Read","Read"],
+        values: ["currentlyReading","wantToRead","read"]
     }
 
     componentDidMount(){
@@ -21,11 +21,11 @@ class Bookshelves extends Component{
                 </div>
                 <div className="list-books-content">
                     <div>
-                        {this.state.shelfTitles.map((shelf,index) => (
+                        {this.shelves.titles.map((shelf,index) => (
                             <Bookshelf key={index} onUpdateBook={(book,shelf)=>{
                             this.props.moveBookToShelf(book,shelf)
                             }} title={shelf}
-                            books={this.props.books.filter((book)=> book.shelf === this.state.shelfValues[index])}
+                            books={this.props.books.filter((book)=> book.shelf === this.shelves.values[index])}
                             />
                         ))}
                     </div>

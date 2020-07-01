@@ -12,6 +12,7 @@ class Bookshelf extends Component{
                         {this.props.books ?
                             this.props.books.map(book=>(
                                 <li key={book.id}>
+                                {/* Will Convert into component at a future time, have to work in a few minutes */}
                                     <div className="book">
                                         <div className="book-top">
                                             {book.imageLinks ?

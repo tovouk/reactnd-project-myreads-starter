@@ -14,6 +14,10 @@ class Search extends React.Component{
         this.props.onSearch(query)
     }
 
+    componentDidMount(){
+        this.updateQuery(this.state.query)
+    }
+
 
     render(){
         return (

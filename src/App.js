@@ -61,18 +61,19 @@ class BooksApp extends React.Component {
   moveBookToShelf(book,shelf) {
     BooksAPI.update(book,shelf)
     // I appear to have put myself in this position, not the best place to be in
-    var index = null;
-    var tempBooks = [...this.state.shelvedBooks]
-    tempBooks.forEach((b,idx)=>{
+    let index = null;
+    let {shelvedBooks} = this.state
+    console.log(shelvedBooks)
+    shelvedBooks.forEach((b,idx)=>{
       if(b.id === book.id)
         index = idx
     })
     if(index === null){
-      tempBooks.push(book)
-      tempBooks[tempBooks.length-1].shelf = shelf
+      shelvedBooks.push(book)
+      shelvedBooks[shelvedBooks.length-1].shelf = shelf
     }else
-      tempBooks[index].shelf = shelf
-    this.setState({shelvedBooks:tempBooks})
+    shelvedBooks[index].shelf = shelf
+    this.setState({shelvedBooks})
     
   }
 
